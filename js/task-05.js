@@ -7,11 +7,17 @@ const outputValue = document.querySelector('#name-output');
 
 inputValue.addEventListener('input', onInputChange);
 
+// function onInputChange(event) {
+        
+//         if (event.currentTarget.value === '' || event.currentTarget.value === name) {
+//         outputValue.textContent = 'Anonymous';
+//     } else {
+//          outputValue.textContent = event.currentTarget.value
+//     }
+// }
+
 function onInputChange(event) {
-    
-        if (event.currentTarget.value === '') {
-        outputValue.textContent = 'Anonymous';
-    } else {
-         outputValue.textContent = event.currentTarget.value
-    }
+    outputValue.textContent = event.currentTarget.value.trim()
+        ? event.currentTarget.value.trim()
+        : 'Anonymous';
 }

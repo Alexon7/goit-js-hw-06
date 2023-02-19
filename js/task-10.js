@@ -22,12 +22,13 @@ function createBoxes(amount) {
   amount = input.value;
 
   const array = [];
+  let sizes = 30;
 
   for (let i = 1; i <= amount; i += 1) {
     let el = document.createElement('div');
-
-    el.style.width = `${30 + 10 * i}px`;
-    el.style.height = `${30 + 10 * i}px`;
+    sizes += 10;
+    el.style.width = `${sizes}px`;
+    el.style.height = `${sizes}px`;
     el.style.backgroundColor = getRandomHexColor();
 
     array.push(el);

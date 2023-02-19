@@ -15,18 +15,18 @@ function onFormSubmit (event) {
 
     
     
-   const formElements = event.currentTarget.elements;
+    const {
+       elements: {email, password},
+   } = event.currentTarget
 
-    const mail = formElements.email.value;
-    const password = formElements.password.value;
-
-     if (formElements.email.value === '' || formElements.password.value === '') {
+   
+     if (email.value === '' || password.value === '') {
         alert('All fields must be write in!');
         return;
     };
 
     const formData = {
-        mail,
+        email,
         password,
     };
 

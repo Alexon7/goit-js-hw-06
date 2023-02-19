@@ -19,21 +19,30 @@ const images = [
 // Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
 
 const listEl = document.querySelector('.gallery');
+listEl.classList.add('style-for-task3');
 
+// const makeLiRows = images.map(
+//     ({ url, alt }) =>
+//       `<li><img src="${url}" alt="${alt}" width = "100%" height = "100%" class="gallery-img"></li>`
+//   )
+//   .join('');
 
-const makeLiRows = images.map(
-    ({ url, alt }) =>
-      `<li><img src="${url}" alt="${alt}" width = "100%" height = "100%" class="gallery-img"></li>`
-  )
-  .join('');
+const createGallery = el => {
+  return `<img src="${el.url}" alt="${el.alt}" width="500px"></img>`;
+};
+
+const makeLiRows = images.map(createGallery).join('');
+console.log(makeLiRows);
 
 listEl.insertAdjacentHTML('afterbegin', makeLiRows);
 
-listEl.style.display = 'flex';
-listEl.style.flexWrap = 'wrap';
-listEl.style.gap = '30px';
-listEl.style.listStyle = 'none';
-listEl.style.padding = '0';
+// listEl.style.display = 'flex';
+// listEl.style.flexWrap = 'wrap';
+// listEl.style.gap = '30px';
+// listEl.style.listStyle = 'none';
+// listEl.style.padding = '0';
+
+
 
 
 
